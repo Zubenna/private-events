@@ -1,17 +1,23 @@
-<div class="users show">
- <h2>Show Users</h2>
-<table summary="User detail view">
-  <tr>
-    <th>Full name</th>
-    <td><%= @user.full_name %></td>
-  </tr>
-  <tr>
-    <th>Username</th>
-    <td><%= @user.username %></td>
-  </tr>
-  <tr>
-    <th>Email</th>
-    <td><%= @user.email %></td>
-  </tr>
-  </table>
- </div>
+
+<h3>User profile page: <%= @user.username if @user %></h3>
+<div class="container">
+  <p>Created events: </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Event name</th>
+        <th>Description </th>
+        <th>Event Date</th>
+        <th>Event Creator</th>
+        <th>Attendees</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><% @created_events.each do |e| %></tr>
+         <td><%= e.title %></td>
+         <td><%= e.description %></td>
+         <td><%= e.event_date %></td>
+         <td><%= e.creator.username %></td>
+       <% end %>
+    </tbody>
+  </table

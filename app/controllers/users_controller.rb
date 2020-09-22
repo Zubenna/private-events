@@ -1,13 +1,23 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all
+  end
+
   def new
-    @user = User.new
+    if session[:username].nil?
+      @user = User.new
+    else
+    @user = User.find(session[:id])
+    redirect_to @user
+    end
   end
 
   def create
     @user = User.new(user_params)
-    session[:user_id] = @user.id
     if @user.save
-      redirect_to '/welcome'
+      session[:username] = @user.username
+      session[:id] = @user.id
+      redirect_to @user
     else
       render('new')
     end
@@ -15,6 +25,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @created_events = @user.created_events
+    @upcoming_events = current_user.upcoming_events
+    @previous_events = current_user.previous_events
+  end
+
+  def destroy
+   session.delete(:id)
+   @current_user = nil
   end
 
   private
