@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:username] = @user.username
       session[:id] = @user.id
-      redirect_to @user
+      redirect_to '/welcome'
     else
       render('new')
     end

@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id.to_s
-      # session[:username] = @user.username
-      redirect_to '/welcome'
+      session[:username] = @user.username
+      redirect_to @user
     else
       redirect_to '/login'
     end
@@ -16,8 +16,8 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete(:user_id)
-    # session.delete(:username)
+    session.delete(:username)
     @current_user = nil
-    redirect_to '/login'
+    redirect_to '/welcome'
   end
 end

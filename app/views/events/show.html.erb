@@ -1,16 +1,15 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Event Title</th>
-      <th>Event Date</th>
-      <th>Event Creator</th>
-    </tr>
-  </thead>
-  <tbody>
-    <td><%= @event.title %></td>
-    <td><%= @event.event_date %></td>
-    <td><%= @event.creator.username %></td>
-  </tbody>
-</table>
-<h3>Event description</h3>
-<p><%= @event.description %></p>
+<h3>Title: <%= @event.title %></h3>
+<p><strong>Event date: </strong><%= @event.event_date %></p>
+<p><strong>Description: </strong><%= @event.description %></p>
+<!--
+<% if @event.attendees.empty? %>
+  <p>No attandees</p>
+<% else %>
+-->
+  <strong>Attendees:</strong>
+  <ul>
+    <% @event.attendees.each do |attendee| %>
+      <li><%= link_to attendee.username, user_path(attendee.id) %></li>
+    <% end %>
+  </ul>
+<% end %>
