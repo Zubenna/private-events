@@ -1,11 +1,22 @@
+
+<%= link_to 'Log Out', logout_path, method: :delete %><br>
+<%= link_to current_user.username, user_path(current_user.id) %>
+
 <h3>Title: <%= @event.title %></h3>
 <p><strong>Event date: </strong><%= @event.event_date %></p>
 <p><strong>Description: </strong><%= @event.description %></p>
+
+<strong>Attendees:</strong>
+<ul>
+  <% @event.attendees.each do |attendee| %>
+    <li><%= link_to attendee.username, user_path(attendee.id) %></li>
+  <% end %>
+</ul>
 <!--
 <% if @event.attendees.empty? %>
   <p>No attandees</p>
 <% else %>
--->
+
   <strong>Attendees:</strong>
   <ul>
     <% @event.attendees.each do |attendee| %>
@@ -13,3 +24,4 @@
     <% end %>
   </ul>
 <% end %>
+-->
