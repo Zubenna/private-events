@@ -29,18 +29,10 @@
           <td><%= e.title %></td>
           <td><%= e.description %></td>
           <td><%= e.event_date %></td>
-          <!--
-          <td>
-            <% e.attendees.each do |a| %>
-              <%= a.username %>,
-            <% end %>
-          </td>
-          -->
         <% end %>
     </tbody>
   </table>
-
-  <p>Upcoming events: </p>
+  <p>Upcoming events:</p>
     <table class="table">
       <thead>
         <tr>
@@ -50,7 +42,6 @@
         </tr>
       </thead>
       <tbody>
-
           <tr><% @upcoming_events.each do |e| %></tr>
             <td><%= e.title %></td>
             <td><%= e.description %></td>
@@ -58,7 +49,6 @@
           <% end %>
       </tbody>
     </table>
-
   <p>Previous events: </p>
     <table class="table">
       <thead>

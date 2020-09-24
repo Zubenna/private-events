@@ -6,22 +6,13 @@
 <p><strong>Event date: </strong><%= @event.event_date %></p>
 <p><strong>Description: </strong><%= @event.description %></p>
 
-<strong>Attendees:</strong>
-<ul>
-  <% @event.attendees.each do |attendee| %>
-    <li><%= link_to attendee.username, user_path(attendee.id) %></li>
-  <% end %>
-</ul>
-<!--
 <% if @event.attendees.empty? %>
   <p>No attandees</p>
 <% else %>
-
   <strong>Attendees:</strong>
   <ul>
     <% @event.attendees.each do |attendee| %>
-      <li><%= link_to attendee.username, user_path(attendee.id) %></li>
+      <li><%= link_to attendee.full_name, user_path(attendee.id) %></li>
     <% end %>
   </ul>
 <% end %>
--->
