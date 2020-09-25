@@ -14,10 +14,14 @@ This project is basically to understand and apply rails association by building 
 
 ## How to Test the Project
 
-Get a local copy of the file  clone with HTTPS 
+Get a local copy of the file. Clone with HTTPS using the command below.
 
 ```
-https://github.com/Zubenna/private-events  
+git clone https://github.com/Zubenna/private-events  
+```
+Access project folders 
+```
+cd private-events
 ```
 Install all the dependencies
 ```
@@ -28,11 +32,17 @@ Migrate the database with the following command
 ```
 rails db:migrate
 ```
+Test Application while on the project root with the following command
+```
+rspec spec/model_spec.rb  => to test models
+```
+rspec spec/event_spec.rb  => to test Event features
+```
+rspec spec/user_spec.rb  => to test User features
+```
 
 ## Run the server
-
-- Access the project folder by typing the command cd private-events folder from your terminal
-- Start rails server with the command rails server.
+- While in the project root, start rails server with the command rails server.
 - In your brwoser, type http://localhost:3000/welcome to access the app.
 - You can now sign up, Log in, create events and navigate the app to test all features.
 
@@ -45,7 +55,7 @@ rails db:migrate
  **Nnamdi Emelu**
 - Github: [@githubhandle](https://github.com/zubenna)
 - Twitter: [@twitterhandle](https://twitter.com/zubenna)
-- Linkedin: [linkedin](https://linkedin.com/in/nnamdi-emelu-08b14340/)
+- Linkedin: [linkedin](https://www.linkedin.com/in/nnamdi-emelu/)
 
 ##  Contributing
 
