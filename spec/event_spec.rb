@@ -17,7 +17,7 @@ RSpec.describe 'Event', type: :feature do
     visit login_path
     fill_in 'login_username', with: 'Mak'
     find("input[type='submit']").click
-    visit events_path 
+    visit events_path
     expect(page).to have_content(/List of All Events/i)
   end
 end
