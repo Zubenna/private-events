@@ -1,12 +1,11 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
-   @user = User.find_by(username: params[:login][:username])
+    @user = User.find_by(username: params[:login][:username])
 
     if @user
-      flash.notice = "You have logged in successfully"
+      flash.notice = 'You have logged in successfully'
       session[:user_id] = @user.id.to_s
       session[:username] = @user.username
       redirect_to @user

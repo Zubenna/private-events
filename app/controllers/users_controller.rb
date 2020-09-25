@@ -7,8 +7,8 @@ class UsersController < ApplicationController
     if session[:username].nil?
       @user = User.new
     else
-    @user = User.find(session[:id])
-    redirect_to @user
+      @user = User.find(session[:id])
+      redirect_to @user
     end
   end
 
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       session[:id] = @user.id
       redirect_to '/welcome'
     else
-      flash[:notice] = "Something went wrong"
+      flash[:notice] = 'Something went wrong'
       render('new')
     end
   end
@@ -33,11 +33,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-   session.delete(:id)
-   @current_user = nil
+    session.delete(:id)
+    @current_user = nil
   end
 
   private
+  
   def user_params
     params.require(:user).permit(:full_name, :username, :email)
   end

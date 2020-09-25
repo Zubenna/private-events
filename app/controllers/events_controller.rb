@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     @user = current_user
     @event = @user.created_events.build(event_params)
     if @event.save
-      flash.notice = "Event created successfully"
+      flash.notice = 'Event created successfully'
       redirect_to @user
     else
       flash[:notice] = 'Something went wrong'
@@ -26,6 +26,7 @@ class EventsController < ApplicationController
   end
 
   private
+  
   def event_params
     params.require(:event).permit(:title, :description, :event_date)
   end

@@ -35,15 +35,15 @@ rails db:migrate
 Test Application while on the project root with the following command
 ```
 rspec spec/model_spec.rb  => to test models
-```
+
 rspec spec/event_spec.rb  => to test Event features
-```
+
 rspec spec/user_spec.rb  => to test User features
 ```
 
 ## Run the server
 - While in the project root, start rails server with the command rails server.
-- In your brwoser, type http://localhost:3000/welcome to access the app.
+- In your browser, type http://localhost:3000/welcome to access the app.
 - You can now sign up, Log in, create events and navigate the app to test all features.
 
 ## Built With

@@ -7,20 +7,19 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :email, presence: true
 
-   def upcoming_events
-      attended_events.select { |t| t.event_date.to_s > Time.now.to_s }
-   end
+  def upcoming_events
+    attended_events.select { |t| t.event_date.to_s > Time.now.to_s }
+  end
 
-   def previous_events
-       attended_events.select { |t| t.event_date.to_s < Time.now.to_s }
-   end
+  def previous_events
+    attended_events.select { |t| t.event_date.to_s < Time.now.to_s }
+  end
 
-   def upcoming_created_events
-      created_events.select { |t| t.event_date.to_s > Time.now.to_s }
-   end
+  def upcoming_created_events
+    created_events.select { |t| t.event_date.to_s > Time.now.to_s }
+  end
 
-   def previous_created_events
-      created_events.select { |t| t.event_date.to_s < Time.now.to_s }
-   end
-
+  def previous_created_events
+    created_events.select { |t| t.event_date.to_s < Time.now.to_s }
+  end
 end
