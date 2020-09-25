@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
    @user = User.find_by(username: params[:login][:username])
 
     if @user
-      flash.notice = " #{@user.full_name} have logged in successfully"
+      flash.notice = "You have logged in successfully"
       session[:user_id] = @user.id.to_s
       session[:username] = @user.username
       redirect_to @user
     else
-      flash.notice = 'Something went wrong'
+      flash.notice = 'Login failed. Something went wrong'
       redirect_to '/login'
     end
   end

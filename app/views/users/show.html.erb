@@ -1,7 +1,9 @@
 
 <h3>User profile page for: <%= @user.full_name if @user %></h3>
 <% if current_user %>
-  <%= "You logged in with username: #{current_user.username}" %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+  <%= "You logged in with username: #{current_user.username}" %> 
+  <%= button_to "Log Out", '/logout', method: :delete %>
+    
 <% end %>
 <div>
   <%= link_to "All events", events_path %>
