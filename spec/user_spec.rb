@@ -1,4 +1,4 @@
-# Please comment out the _header.html.erb partial in 
+# Please comment out the _header.html.erb partial in
 # views/layout/application.html.erb first before
 # running the RSpec test series to avoid ambiguity
 
