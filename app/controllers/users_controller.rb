@@ -8,17 +8,17 @@ class UsersController < ApplicationController
       @user = User.new
     else
       @user = User.find(session[:id])
-      redirect_to @user
+      redirect_to user_path(@user)
     end
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Profile for #{@user.full_name} Created successfully"
+      flash[:notice] = "Profile for #{@user.full_name} Created successfully. Login to access all features."
       session[:username] = @user.username
       session[:id] = @user.id
-      redirect_to '/login'
+      redirect_to user_path(@user)
     else
       flash[:notice] = 'Something went wrong'
       render('new')

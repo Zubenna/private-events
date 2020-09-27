@@ -20,6 +20,6 @@ class SessionsController < ApplicationController
     session.delete(:username)
     flash.notice = 'You have logged out successfully'
     @current_user = nil
-    redirect_to '/welcome'
+    redirect_to root_url
   end
 end

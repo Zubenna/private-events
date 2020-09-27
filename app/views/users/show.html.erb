@@ -1,20 +1,4 @@
-
 <h3>User profile page for: <%= @user.full_name if @user %></h3>
-<% if current_user %>
-  <%= "You logged in with username: #{current_user.username}" %> 
-  <%= button_to "Log Out", '/logout', method: :delete %>
-<% end %>
-<div>
-  <%= link_to "All events", events_path %>
-</div>
-<div>
-   <% if current_user? %>
-      <%= link_to "New event", new_event_path %>
-   <% else %>
-    <%= link_to "Sign in", new_session_path %>
-    <%= link_to "New user", new_user_path %>
-  <% end %>
-</div>
 <div class="container">
   <p>Created events: </p>
   <table class="table">

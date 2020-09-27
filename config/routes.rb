@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'sessions#welcome'
   resources :users, only: [:new, :create, :show]
   resources :events
   get '/login' => 'sessions#new'
