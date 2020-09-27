@@ -44,7 +44,7 @@ RSpec.describe User, type: :model do
   end
 end
 RSpec.describe Attendance, type: :model do
-  User.create(full_name: 'Daniel Eze', username: 'Denco', email: 'd.email@example.com')
+  user = User.create(full_name: 'Daniel Eze', username: 'Denco', email: 'd.email@example.com')
   Event.create(title: 'Test event', description: 'Test title', event_date: '2020-10-22', creator_id: user.id)
   u = User.first
   e = Event.first
