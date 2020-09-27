@@ -1,6 +1,6 @@
 <h3>List of All Events</h3>
-<%= button_to "Log Out", '/logout', method: :delete %>
 <%= link_to current_user.username, user_path(current_user.id) %>
+<%= button_to "Log Out", '/logout', method: :delete %>
 <table class="table">
   <thead>
     <tr>

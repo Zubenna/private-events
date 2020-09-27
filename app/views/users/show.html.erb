@@ -3,12 +3,11 @@
 <% if current_user %>
   <%= "You logged in with username: #{current_user.username}" %> 
   <%= button_to "Log Out", '/logout', method: :delete %>
-    
 <% end %>
 <div>
   <%= link_to "All events", events_path %>
 </div>
-</div>
+<div>
    <% if current_user? %>
       <%= link_to "New event", new_event_path %>
    <% else %>
