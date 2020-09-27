@@ -32,6 +32,22 @@ Migrate the database with the following command
 ```
 rails db:migrate
 ```
+Populate attendees with the following command
+```
+example
+e = Event.find(1)
+u = User.find(1)
+u.attendee_events << e
+
+e = Event.find(1)
+u = User.find(2)
+u.attendee_events << e
+
+e = Event.find(1)
+u = User.find(3)
+u.attendee_events << e
+```
+
 Test Application while on the project root with the following command
 ```
 rspec spec/model_spec.rb  => to test models
