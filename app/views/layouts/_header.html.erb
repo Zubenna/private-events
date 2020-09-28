@@ -1,0 +1,9 @@
+<% if current_user == nil && !current_user? %>
+  <%= link_to "Home", '/welcome' %>
+<% end %>
+<% if current_user? %>
+  <%= link_to "All events", events_path %>
+  <%= link_to "New event", new_event_path %>
+  <%= link_to "You Signed in with username #{current_user.username}", user_path(current_user) %>
+  <%= link_to "Log Out", '/logout', method: :delete %>
+<% end %>
