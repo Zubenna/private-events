@@ -1,6 +1,6 @@
 <% if current_user == nil && !current_user? %>
   <%= link_to "All events", events_path %>
-  <%= link_to "New event", new_event_path %>
+  <%= link_to 'New User', new_user_path %>
   <%= button_to "Home", '/welcome', method: :get %>
 <% end %>
 <% if current_user && current_user.username != nil %>
