@@ -32,8 +32,11 @@ Migrate the database with the following command
 ```
 rails db:migrate
 ```
-Populate attendees with the following command
+Populate the database with the following command
+rails db:seed
 ```
+You may also populate attendees with the following command from console.
+
 example
 e = Event.find(1)
 u = User.find(1)
@@ -50,6 +53,8 @@ u.attendee_events << e
 
 Test Application while on the project root with the following command
 ```
+rspec => to run all tests at once
+
 rspec spec/model_spec.rb  => to test models
 
 rspec spec/event_spec.rb  => to test Event features
@@ -61,6 +66,7 @@ rspec spec/user_spec.rb  => to test User features
 - While in the project root, start rails server with the command rails server.
 - In your browser, type http://localhost:3000/welcome to access the app.
 - You can now sign up, Log in, create events and navigate the app to test all features.
+- Example; Log in with username Boby or Lucky.
 
 ## Built With
 - Ruby, Ruby on Rails

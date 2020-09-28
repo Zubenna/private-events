@@ -34,7 +34,7 @@ RSpec.describe 'User', type: :feature do
     visit login_path
     fill_in 'login_username', with: 'Mak'
     find("input[type='submit']").click
-    click_link("Log Out")
+    click_link('Log Out')
     expect(page).to have_content(/You have logged out successfully/i)
   end
 end
