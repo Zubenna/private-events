@@ -37,7 +37,7 @@ Populate the database with the following command
 rails db:seed
 ```
 You may also populate attendees with the following command from console.
-
+```
 example
 e = Event.find(1)
 u = User.find(1)
