@@ -33,6 +33,7 @@ Migrate the database with the following command
 rails db:migrate
 ```
 Populate the database with the following command
+```
 rails db:seed
 ```
 You may also populate attendees with the following command from console.

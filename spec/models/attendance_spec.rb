@@ -6,8 +6,8 @@ RSpec.describe Attendance, type: :model do
   e = Event.first
   test_array = u.attended_events << e
   it 'it should be equal to event title' do
-  test_array.each do |attendee|
-    expect(attendee.title).to eq('Test event')
+    test_array.each do |attendee|
+      expect(attendee.title).to eq('Test event')
     end
   end
 end
