@@ -15,9 +15,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Profile for #{@user.full_name} Created successfully. Login to access all features."
+      flash[:notice] = "Profile for #{@user.full_name} Created successfully"
+      session[:user_id] = @user.id.to_s
       session[:username] = @user.username
-      session[:id] = @user.id
       redirect_to user_path(@user)
     else
       flash[:notice] = 'Something went wrong'

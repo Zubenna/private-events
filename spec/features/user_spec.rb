@@ -1,7 +1,3 @@
-# Please comment out the _header.html.erb partial in
-# views/layout/application.html.erb first before
-# running the RSpec test series to avoid ambiguity
-
 require 'rails_helper'
 RSpec.describe 'User', type: :feature do
   it 'It should create a new user' do
@@ -10,7 +6,7 @@ RSpec.describe 'User', type: :feature do
     fill_in 'user_username', with: 'Mak'
     fill_in 'user_email', with: 'm.email@example.com'
     find("input[type='submit']").click
-    expect(page).to have_content(/Profile for Mark Precious Created successfully. Login to access all features/i)
+    expect(page).to have_content(/Profile for Mark Precious Created successfully/i)
   end
   it 'It should NOT create a new user with imcomplete parameters' do
     visit new_user_path
@@ -32,5 +28,13 @@ RSpec.describe 'User', type: :feature do
     fill_in 'login_username', with: 'Mark Precious'
     find("input[type='submit']").click
     expect(page).to have_content(/Login failed. Something went wrong/i)
+  end
+  it 'It should log user out successfully' do
+    User.create(full_name: 'Mark Precious', username: 'Mak', email: 'm.email@example.com')
+    visit login_path
+    fill_in 'login_username', with: 'Mak'
+    find("input[type='submit']").click
+    click_link("Log Out")
+    expect(page).to have_content(/You have logged out successfully/i)
   end
 end
